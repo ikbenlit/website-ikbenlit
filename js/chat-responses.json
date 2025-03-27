@@ -1,0 +1,48 @@
+{
+    "greetings": [
+        "Hey daar! Ik ben Colin's AI sidekick. Wat wil je weten over hem? Vraag maar raak! 😎",
+        "Hallo! Zin om meer te weten te komen over Colin? Ik ben er om je alles te vertellen! 🤖",
+        "Hoi! Ik ben jouw gids door Colin's wereld. Vragen? Stel ze gerust! 🚀",
+        "Yo! Hier om je alles te vertellen over Colin. Ready? Let's go! 💡"
+    ],
+    "fallbacks": [
+        "Hmm... daar moet ik even over nadenken. Probeer iets te vragen over Colin's werk, passies of koffieverslaving! ☕",
+        "Dat snap ik niet helemaal. Misschien kun je het anders formuleren? Vraag gerust naar Colin’s expertise of interesses!",
+        "Oops! Dat weet zelfs ik niet... maar ik leer graag bij! Stel iets over consultancy of AI.",
+        "Euh, daar moet ik even over nadenken... Vraag iets over Colin’s werk of passie voor technologie!"
+    ],
+    "topics": {
+        "about_colin": {
+            "keywords": ["wie is Colin", "vertel over Colin", "ervaring", "achtergrond"],
+            "response": "Colin is een pragmatische AI-adviseur met 15+ jaar ervaring in de zorg-IT. Hij heeft gewerkt bij PinkRoccade Healthcare en ondersteunt zorginstellingen zoals Parnassia, Antes, Mondriaan, Arkin, Pameijer en Breburg met digitale transformatie. Hij houdt van rijst met kip, maar thuis is spaghetti de baas! 🍝"
+        },
+        "family": {
+            "keywords": ["kinderen", "zoons", "gezin", "familie", "Aaron", "Aden"],
+            "response": "Colin heeft twee zoons: Aaron (10) en Aden (14). Aaron speelt voetbal bij Robur in Apeldoorn en is een echte allrounder op het veld. Aden speelt gitaar en hockeyt bij AMHC in Apeldoorn. Sportieve en muzikale jongens, toch? 🎸🏑⚽"
+        },
+        "consultancy": {
+            "keywords": ["consultancy", "zorgadvies", "ECD", "implementatie", "zorgprocessen"],
+            "response": "Colin helpt zorgorganisaties met de implementatie van ECD's en het optimaliseren van werkprocessen. Hij heeft ervaring met instellingen zoals Parnassia, Antes, Mondriaan, Arkin, Pameijer en Breburg. Zijn aanpak? Hands-on, pragmatisch en altijd gericht op de mensen die ermee werken."
+        },
+        "sports": {
+            "keywords": ["sport", "basketbal", "flagfootball", "fitness", "sportief", "hobby"],
+            "response": "Colin is behoorlijk sportief! Hij heeft van zijn 12e tot 18e fanatiek gebasketbald. Tegenwoordig is hij regelmatig in de sportschool te vinden, vaak samen met Robine. Op zijn 38e probeerde hij Flagfootball bij de Apeldoorn Monarchs, maar dat bleek niet zo goed voor zijn lijf. 🏀💪🏈"
+        },
+        "training": {
+            "keywords": ["training", "workshops", "e-learning", "leren", "educatie"],
+            "response": "Colin deelt zijn kennis graag! Hij geeft trainingen en workshops over digitale transformatie, AI en ECD-optimalisatie. Daarnaast heeft hij e-learning modules ontwikkeld, zodat organisaties op hun eigen tempo kunnen leren. 📚🎯"
+        },
+        "training_epd": {
+            "keywords": ["opleiding", "training", "workshop", "e-learning", "leren", "EPD", "implementatie"],
+            "response": "Colin helpt organisaties met het opzetten van effectieve EPD-opleidingstrajecten, met een focus op praktische toepasbaarheid en adoptie door medewerkers. Wil je meer weten? Vraag maar raak!"
+        },
+        "training_phases": {
+            "keywords": ["fasen", "stappenplan", "opleidingstraject", "training proces"],
+            "response": "Het opleidingstraject voor een EPD bestaat uit vier fasen:\n\n1️⃣ **Inventarisatie:** Analyse van behoeften en knelpunten.\n2️⃣ **Ontwerp:** Structuur van de training bepalen en materiaal ontwikkelen.\n3️⃣ **Implementatie:** Trainingen geven en ondersteuning bieden.\n4️⃣ **Evaluatie:** Gebruikerstevredenheid meten en bijsturen."
+        },
+        "contact": {
+            "keywords": ["contact", "afspraak", "bellen", "mailen", "kennismaken"],
+            "response": "Wil je in contact komen met Colin? Bel of mail (een beller is sneller 😎) - 📞 06 3924 8256 - 💻 colin@ikbenlit.nl"
+        }
+    }
+}
