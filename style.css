@@ -17,6 +17,7 @@ Text Domain: ikbenlit
 @import 'css/pages.css';
 @import 'css/chatbot.css';
 @import 'css/blog.css';
+@import 'css/projects.css';
 
 /* Services Section Styles */
 .what-i-do {
