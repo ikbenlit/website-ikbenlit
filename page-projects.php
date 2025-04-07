@@ -36,7 +36,21 @@ get_header(); ?>
                     <a href="<?php the_permalink(); ?>" class="project-card-link" aria-label="<?php printf(__('Bekijk project %s', 'ikbenlit'), get_the_title()); ?>">
                         <article class="project-card">
                             <?php if ($status) : ?>
-                                <div class="status-ribbon status-<?php echo esc_attr($status); ?>"></div>
+                                <div class="status-ribbon status-<?php echo esc_attr($status); ?>">
+                                    <?php
+                                    switch ($status) {
+                                        case 'completed':
+                                            _e('Afgerond', 'ikbenlit');
+                                            break;
+                                        case 'in-progress':
+                                            _e('In ontwikkeling', 'ikbenlit');
+                                            break;
+                                        case 'planned':
+                                            _e('Gepland', 'ikbenlit');
+                                            break;
+                                    }
+                                    ?>
+                                </div>
                             <?php endif; ?>
                             
                             <div class="project-content">

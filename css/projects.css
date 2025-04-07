@@ -1,29 +1,29 @@
 /* Projects Section */
-.projects-section {
-    padding: 4rem 0;
-    min-height: calc(100vh - 60px);
-    background-color: var(--white);
+body .projects-section {
+    padding: 4rem 0 !important;
+    min-height: calc(100vh - 60px) !important;
+    background-color: var(--white) !important;
     position: relative;
     overflow: hidden;
-    margin-top: 80px;
+    margin-top: 80px !important;
 }
 
 /* Page Header */
-.page-header {
+.projects-section .page-header {
     text-align: left;
     margin-bottom: 3rem;
     position: relative;
     z-index: 1;
 }
 
-.page-title {
+.projects-section .page-title {
     color: var(--dark-blue);
     font-size: 2.5rem;
     margin: 0;
     font-weight: 500;
 }
 
-.page-description {
+.projects-section .page-description {
     color: var(--dark-blue);
     font-size: 1.1rem;
     max-width: 800px;
@@ -32,168 +32,166 @@
 }
 
 /* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+body .projects-section .projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
     padding: 0;
     position: relative;
     z-index: 1;
 }
 
 /* Project Card Link Wrapper */
-.project-card-link {
-    display: block;
-    text-decoration: none;
-    color: inherit; /* Zorgt dat tekstkleur niet verandert */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+body .projects-section .project-card-link {
+    display: block !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: transform 0.3s ease !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
 }
 
-.project-card-link:hover .project-card {
-     border-color: var(--primary-red); /* Hover effect van oude .project-card:hover hierheen verplaatst */
-}
-
-.project-card-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+body .projects-section .project-card-link:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Project Card */
-.project-card {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
+body .projects-section .project-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 8px !important;
     overflow: hidden;
     position: relative;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: border-color 0.3s ease; /* Behoud transitie voor border */
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 200px !important;
+}
+
+body .projects-section .project-card-link:hover .project-card {
+    border-color: var(--primary-red) !important;
 }
 
 /* Status Ribbon */
-.status-ribbon {
+.projects-section .status-ribbon {
     position: absolute;
     top: 15px;
-    right: -25px;
+    right: -35px;
     transform: rotate(45deg);
-    width: 100px;
-    height: 16px;
+    width: 120px;
+    height: 24px;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-}
-
-.status-ribbon::before {
-    content: '★';
-    font-size: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
     line-height: 1;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-.status-ribbon.status-completed {
-    background: green;
+.projects-section .status-ribbon.status-completed {
+    background: #2ecc71;
 }
 
-.status-ribbon.status-in-progress {
+.projects-section .status-ribbon.status-in-progress {
     background: var(--primary-red);
 }
 
-.status-ribbon.status-planned {
+.projects-section .status-ribbon.status-planned {
     background: var(--soft-purple);
 }
 
 /* Project Content */
-.project-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    background: #ffffff !important;
+body .projects-section .project-content {
+    padding: 1.5rem !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-.project-title {
-    color: #000000 !important;
-    font-size: 1.1rem !important;
-    margin: 0 0 1rem;
+body .projects-section .project-title {
+    color: var(--dark-blue) !important;
+    font-size: 1.25rem !important;
+    margin: 0 0 1rem !important;
     font-weight: 600 !important;
-    line-height: 1.3;
+    line-height: 1.3 !important;
 }
 
-.project-description {
+body .projects-section .project-description {
     color: #666666 !important;
-    margin-bottom: 0;
-    line-height: 1.6;
-    flex-grow: 1;
+    margin-bottom: 0 !important;
+    line-height: 1.6 !important;
+    flex-grow: 1 !important;
     font-size: 0.95rem !important;
-    font-weight: 400 !important;
 }
 
-.project-description p {
-    color: #666666 !important;
+.projects-section .project-description p {
+    color: #666666;
     margin: 0;
-    font-weight: 400 !important;
 }
 
 /* Project Meta */
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 0.5rem;
-    gap: 1rem;
-    border-top: 1px solid #e5e5e5;
-    margin-top: 1.5rem;
-    padding-right: 2rem;
-    position: relative;
+body .projects-section .project-meta {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    padding-top: 1rem !important;
+    gap: 1rem !important;
+    border-top: 1px solid #e5e5e5 !important;
+    margin-top: 1.5rem !important;
+    position: relative !important;
 }
 
-.meta-left, .meta-right {
+.projects-section .meta-left,
+.projects-section .meta-right {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.meta-tag {
-    font-size: 0.75rem;
+body .projects-section .meta-tag {
+    font-size: 0.75rem !important;
     color: var(--primary-red) !important;
-    opacity: 1;
-    transition: opacity 0.3s ease;
+    padding: 0.25rem 0.5rem !important;
+    background: rgba(var(--primary-red-rgb), 0.1) !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s ease !important;
 }
 
-.meta-tag:not(:last-child)::after {
-    /* content: '•'; */
-    margin-left: 0.5rem;
-    opacity: 0.5;
+.projects-section .meta-tag:hover {
+    background: rgba(var(--primary-red-rgb), 0.15);
 }
 
-/* Nieuwe visuele pijl in de kaart */
-.card-arrow-icon {
+/* Card Arrow Icon */
+.projects-section .card-arrow-icon {
     position: absolute;
-    bottom: 3rem; /* Zelfde positie als oude pijl */
-    right: 0.5rem; /* Zelfde positie als oude pijl */
+    right: 0;
+    bottom: 0;
     width: 24px;
     height: 24px;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    color: var(--primary-red);
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Verberg standaard */
-    transition: opacity 0.3s ease;
+    color: var(--primary-red);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.card-arrow-icon::before {
+.projects-section .card-arrow-icon::before {
     content: "→";
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
 }
 
-/* Toon pijl bij hover op de kaart-link */
-.project-card-link:hover .card-arrow-icon {
+.projects-section .project-card-link:hover .card-arrow-icon {
     opacity: 1;
+    transform: translateX(4px);
 }
 
 /* NIEUWE STIJLEN VOOR SINGLE PROJECT PAGE */
@@ -201,245 +199,235 @@
 
 /* Single Project Page */
 .single-project {
-    padding-top: 4rem;
-    padding-bottom: 45rem;
-    padding-left: 0;
-    padding-right: 0;
-    /* min-height: calc(100vh - 60px); */ /* Blijft verwijderd */
+    padding: 1.5rem 0 4rem; /* Boven: 1.5rem, Links/Rechts: 0, Onder: 4rem */
     background-color: var(--white);
     position: relative;
-    overflow: hidden; /* Zorg dat dit actief is */
-    margin-top: 5px;
+    margin-top: 60px;
 }
 
 .single-project .container {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-/* Specifieke stijlen voor project card in single project pagina */
+/* Reset card styles for single project context */
 .single-project .project-card {
     background: none;
     border: none;
     box-shadow: none;
     overflow: visible;
+    padding: 0; /* Reset padding if any was inherited */
 }
 
-/* Project Header in Single Project - Flat design */
 .single-project .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0;
-    margin-bottom: 0;
-    background: none;
-    border: none;
-    position: relative;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Push title and date apart */
+    align-items: flex-start; /* Align items at the top */
+    margin-bottom: 0; /* Teruggezet naar 0 */
+    border-bottom: 1px solid #e5e5e5; /* Teruggezet */
+    padding-bottom: 1rem; /* Teruggezet */
+    flex-wrap: wrap; /* Allow wrapping if needed */
 }
 
 .single-project .project-title {
-    font-size: 2.2rem !important;
-    margin-bottom: 0;
-    color: var(--dark-blue) !important;
-    font-weight: 600 !important;
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+    font-weight: 600;
     line-height: 1.2;
+    margin: 0;
+    margin-right: 1rem; /* Add some space between title and date */
 }
 
 .single-project .project-date {
-    color: #777;
+    color: #666;
     font-size: 0.9rem;
+    margin-top: 0.1em; /* Adjust vertical alignment slightly */
     display: block;
-    font-weight: 400;
-    text-align: right;
+    text-align: right; /* Align date text to the right */
+    flex-shrink: 0; /* Prevent date from shrinking */
 }
 
-/* Project Meta in Single Project */
+/* Metadata styling for single project */
 .single-project .project-meta {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align tag groups at the top */
     flex-wrap: wrap;
     gap: 1rem;
-    margin: 0 0 1rem 0;
-    padding: 0;
-    border: none;
-    background: none;
-    order: 1; /* Make sure meta appears right after header, before description */
+    margin-bottom: 2rem; /* Teruggezet naar 2rem, pas aan indien nodig */
 }
 
-.single-project .meta-item {
-    display: inline-block;
-}
-
-.single-project .meta-label {
-    display: none; /* Hide meta labels */
-}
-
-.single-project .meta-value {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--dark-blue);
-    background-color: #f5f5f5;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-}
-
-/* Hide status meta item completely in single project */
-.single-project .meta-item:has(.status-completed),
-.single-project .meta-item:has(.status-in-progress),
-.single-project .meta-item:has(.status-planned) {
-    display: none;
-}
-
-/* Project Content Structure in Single Project */
-.single-project .project-content {
-    padding: 0;
-    background: none;
-    box-shadow: none;
+.single-project .meta-left,
+.single-project .meta-right {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-/* Featured Image in Single Project */
+/* Re-use project card tag styling */
+.single-project .meta-tag {
+    font-size: 0.8rem !important;
+    color: var(--primary-red) !important;
+    padding: 0.3rem 0.6rem !important;
+    background: rgba(var(--primary-red-rgb), 0.1) !important;
+    border-radius: 4px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.single-project .meta-tag:hover {
+    background: rgba(var(--primary-red-rgb), 0.15);
+}
+
 .single-project .project-featured-image {
     margin: 0 0 2rem 0;
     position: relative;
-    overflow: hidden; /* Behoud/voeg toe */
-    /* border-radius: 8px; */ /* Verwijder border-radius */
-    order: 2;
-    aspect-ratio: 1200 / 400; /* Blijft 3:1 ratio */
-    max-width: 100%;
-    background-color: #ffffff;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */ /* Verwijder box-shadow */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
 }
 
 .single-project .project-featured-image img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    display: block;
-    /* border-radius: 8px; */ /* Verwijderd, niet nodig op img */
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */ /* Verwijderd, verplaatst naar container */
+    object-fit: cover; /* Cover the container */
 }
 
-/* Project Description in Single Project */
+/* Description styling for single project */
 .single-project .project-description {
-    order: 3; /* Display after featured image */
-    font-size: 1.05rem !important;
-    line-height: 1.8;
-    color: #444 !important;
+    color: #333; /* FORCE dark text color */
+    line-height: 1.7;
+    margin-bottom: 2rem;
 }
 
-.single-project .project-description p {
-    margin-bottom: 1.2rem;
-    color: #444 !important;
+.single-project .project-description p,
+.single-project .project-description li,
+.single-project .project-description h1,
+.single-project .project-description h2,
+.single-project .project-description h3,
+.single-project .project-description h4,
+.single-project .project-description h5,
+.single-project .project-description h6 {
+    color: #333; /* Ensure all content elements use dark text */
+    margin-bottom: 1.5em;
 }
 
-.single-project .project-description p:last-child {
+.single-project .project-description p:last-child,
+.single-project .project-description li:last-child {
     margin-bottom: 0;
 }
 
-/* Navigation in Single Project - Cleaner style */
-.post-navigation {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 2rem;
-    position: relative; /* Voeg position toe voor z-index */
-    z-index: 2; /* Zorg dat nav boven andere elementen staat */
+.single-project .project-description a {
+    color: var(--primary-red); /* Style links */
+    text-decoration: underline;
 }
 
-.nav-previous,
-.nav-next {
-    flex: 1;
-}
-
-.nav-previous a,
-.nav-next a {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    transition: transform 0.2s ease;
-    text-decoration: none;
-    position: relative;
-}
-
-.nav-previous a:hover {
-    transform: translateX(-8px);
-    background: transparent;
-}
-
-.nav-next a:hover {
-    transform: translateX(8px);
-    background: transparent;
-}
-
-.nav-subtitle {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--primary-red);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.nav-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+.single-project .project-description a:hover {
     color: var(--dark-blue);
 }
 
-/* Arrows in navigation */
-.nav-previous a {
-    text-align: left;
-    padding-left: 1.5rem;
+
+/* Post Navigation styling */
+.single-project .post-navigation {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Add gap between nav items */
 }
 
-.nav-next a {
+.single-project .nav-previous,
+.single-project .nav-next {
+    flex-basis: calc(50% - 0.5rem); /* Roughly half width, accounting for gap */
+    max-width: calc(50% - 0.5rem);
+}
+
+.single-project .nav-next {
     text-align: right;
-    padding-right: 1.5rem;
 }
 
-.nav-previous a::before {
-    content: "←";
-    font-family: Arial, sans-serif;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+.single-project .post-navigation a {
+    display: inline-block; /* Allow better spacing control */
+    text-decoration: none;
+}
+
+.single-project .nav-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--primary-red); /* Red subtitle */
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.single-project .nav-title {
+    color: var(--dark-blue); /* Dark blue title */
+    font-weight: 500;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.single-project .post-navigation a:hover .nav-title {
     color: var(--primary-red);
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
 }
 
-.nav-next a::after {
-    content: "→";
+/* Add arrow to previous link */
+.single-project .nav-previous a::before {
+    content: '← '; /* Add left arrow */
     font-family: Arial, sans-serif;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-right: 0.3em;
     color: var(--primary-red);
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
 }
 
-.nav-previous a:hover::before {
-    transform: translateY(-50%) translateX(-3px);
+/* Add arrow to next link */
+.single-project .nav-next a::after {
+    content: ' →'; /* Add right arrow */
+    font-family: Arial, sans-serif;
+    margin-left: 0.3em;
+    color: var(--primary-red);
 }
 
-.nav-next a:hover::after {
-    transform: translateY(-50%) translateX(3px);
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+    .single-project .project-header {
+        flex-direction: column; /* Stack title and date */
+        align-items: flex-start; /* Align both left */
+    }
+
+    .single-project .project-date {
+        text-align: left; /* Align date left */
+        margin-top: 0.5rem;
+    }
+
+    .single-project .project-title {
+        font-size: 2rem; /* Smaller title */
+        margin-right: 0;
+    }
+
+    .single-project .nav-previous,
+    .single-project .nav-next {
+        flex-basis: 100%; /* Full width on small screens */
+        max-width: 100%;
+    }
+
+    .single-project .nav-next {
+        text-align: left; /* Align next link left */
+    }
+     .single-project .nav-next a::after {
+        margin-left: 0; /* Reset margin for arrow */
+     }
+     .single-project .nav-next a::before {
+         content: '→ '; /* Add right arrow before */
+         font-family: Arial, sans-serif;
+         margin-right: 0.3em;
+         color: var(--primary-red);
+     }
+
+
 }
 
 /* External Link Icons - Add these styles */
@@ -468,8 +456,9 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .projects-grid {
+    .projects-section .projects-grid {
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        padding: 0 1rem;
     }
 }
 
@@ -479,16 +468,15 @@
         margin-top: 60px;
     }
 
-    .page-title {
+    .projects-section .page-title {
         font-size: 2rem;
     }
 
-    .projects-grid {
+    .projects-section .projects-grid {
         grid-template-columns: 1fr;
-        padding: 0 1rem;
     }
 
-    .project-card {
+    .projects-section .project-card {
         min-height: 180px;
     }
 

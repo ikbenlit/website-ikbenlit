@@ -17,6 +17,26 @@
                 </header>
 
                 <div class="project-content">
+                    <div class="project-meta">
+                        <div class="meta-left">
+                            <?php if ($programming_language) : 
+                                $languages = explode(',', $programming_language);
+                                foreach ($languages as $lang) : ?>
+                                    <span class="meta-tag"><?php echo esc_html(trim($lang)); ?></span>
+                                <?php endforeach;
+                            endif; ?>
+                        </div>
+                        
+                        <div class="meta-right">
+                            <?php if ($technology) :
+                                $techs = explode(',', $technology);
+                                foreach ($techs as $tech) : ?>
+                                    <span class="meta-tag"><?php echo esc_html(trim($tech)); ?></span>
+                                <?php endforeach;
+                            endif; ?>
+                        </div>
+                    </div>
+
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="project-featured-image">
                             <?php the_post_thumbnail('project-featured', array(
@@ -28,43 +48,6 @@
 
                     <div class="project-description">
                         <?php the_content(); ?>
-                    </div>
-
-                    <div class="project-meta">
-                        <?php if ($programming_language) : ?>
-                            <div class="meta-item">
-                                <span class="meta-label"><?php _e('Programmeertaal:', 'ikbenlit'); ?></span>
-                                <span class="meta-value"><?php echo esc_html($programming_language); ?></span>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($technology) : ?>
-                            <div class="meta-item">
-                                <span class="meta-label"><?php _e('Technologie:', 'ikbenlit'); ?></span>
-                                <span class="meta-value"><?php echo esc_html($technology); ?></span>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($status) : ?>
-                            <div class="meta-item">
-                                <span class="meta-label"><?php _e('Status:', 'ikbenlit'); ?></span>
-                                <span class="meta-value status-<?php echo esc_attr($status); ?>">
-                                    <?php
-                                    switch($status) {
-                                        case 'completed':
-                                            _e('Afgerond', 'ikbenlit');
-                                            break;
-                                        case 'in-progress':
-                                            _e('In ontwikkeling', 'ikbenlit');
-                                            break;
-                                        case 'planned':
-                                            _e('Gepland', 'ikbenlit');
-                                            break;
-                                    }
-                                    ?>
-                                </span>
-                            </div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </article>
