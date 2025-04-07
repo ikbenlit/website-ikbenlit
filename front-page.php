@@ -174,7 +174,7 @@ get_header(); ?>
     </section>
 
     <div class="floating-chat">
-        <div class="speech-bubbles" aria-hidden="true">
+        <div class="speech-bubbles">
             <button class="close-bubbles" aria-label="Sluit berichten">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M6 18L18 6M6 6l12 12"/>
@@ -267,5 +267,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Chat widget script -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/floating-chat.js"></script> 
+<?php get_footer(); ?> 

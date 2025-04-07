@@ -1,0 +1,210 @@
+/* Kleurvariabelen */
+:root {
+    /* Primary Colors */
+    --primary-red: #FF0000;
+    --dark-blue: #1a1a1a;
+    
+    /* Accent Colors */
+    --sunset-red: #FF4136;
+    --sunset-yellow: #FFB700;
+    --soft-purple: #834D9B;
+    
+    /* Background/Text Colors */
+    --dark-purple: #2D1832;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    
+    /* Gradients */
+    --brand-gradient: linear-gradient(45deg, #FF0000, #FFB700);
+    --sunset-gradient: linear-gradient(to right, #FF4136, #FFB700);
+    --purple-gradient: linear-gradient(to right, #2D1832, #834D9B);
+    --dark-gradient: linear-gradient(135deg, #000033, #834D9B);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid var(--primary-red);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+/* Styling voor wanneer de header scrollt */
+.site-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.custom-logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 3px 0;
+}
+
+.custom-logo {
+    height: 140px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+}
+
+.site-header.scrolled .custom-logo {
+    filter: none;
+}
+
+/* Navigation */
+.main-navigation {
+    margin-left: auto;
+}
+
+.primary-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.primary-menu li {
+    position: relative;
+}
+
+.primary-menu a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    text-shadow: none;
+}
+
+.primary-menu a:hover {
+    color: var(--primary-red);
+}
+
+.primary-menu .current-menu-item > a {
+    color: var(--sunset-red);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .primary-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-top: 2px solid var(--primary-red);
+    }
+
+    .primary-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        color: var(--dark-blue);
+    }
+
+    .menu-toggle:hover {
+        color: var(--primary-red);
+    }
+}
+
+/* Main Content */
+.site-main {
+    min-height: calc(100vh - 60px);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--dark-gradient);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    color: var(--white);
+}
+
+.site-info {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    color: var(--light-gray);
+}
+
+.site-info p {
+    margin: 0;
+}
+
+/* Grid Layouts */
+.archive-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 0.5rem 0;
+    }
+
+    .footer-widgets {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Algemene link styling */
+a {
+    color: var(--primary-red);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--sunset-red);
+} 
