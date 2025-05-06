@@ -1,0 +1,350 @@
+/* 
+ * Pricing Page Styling
+ * Styling voor de prijstabel op ikbenlit.nl
+ */
+
+/* === Pagina structuur === */
+.pricing-page-wrapper {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.pricing-main-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Fix voor overlappende header */
+.pricing-page-wrapper .entry-header,
+.pricing-page-wrapper .page-header,
+.pricing-page-wrapper .entry-title,
+.pricing-page-wrapper h1.entry-title {
+    margin-top: 3rem !important;
+    padding-top: 2rem !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Zorg dat WordPress titel niet onder de menubalk valt */
+body.page-template-page-pricing .site-content {
+    padding-top: 80px !important; /* Pas dit aan op basis van de hoogte van je menubalk */
+}
+
+/* Als er een admin bar is, extra ruimte toevoegen */
+body.admin-bar.page-template-page-pricing .site-content {
+    padding-top: 112px !important; /* 80px + 32px voor admin bar */
+}
+
+/* Responsive aanpassingen voor verschillende schermgroottes */
+@media screen and (max-width: 782px) {
+    body.admin-bar.page-template-page-pricing .site-content {
+        padding-top: 126px !important; /* 80px + 46px voor admin bar op mobiel */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body.page-template-page-pricing .site-content {
+        padding-top: 60px !important; /* Meestal is de mobiele header kleiner */
+    }
+    
+    body.admin-bar.page-template-page-pricing .site-content {
+        padding-top: 106px !important; /* 60px + 46px voor admin bar op mobiel */
+    }
+}
+
+/* === Pagina-inhoud styling === */
+.pricing-page-content {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 1rem;
+}
+
+/* Zorg dat de content direct onder de header begint */
+.page-content.pricing-page-content {
+    padding-top: 2rem;
+    margin-top: 0;
+}
+
+.pricing-page-content h1,
+.pricing-page-content h2,
+.pricing-page-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Eerste heading krijgt geen top margin voor betere aansluiting bij header */
+.pricing-page-content h1:first-child,
+.pricing-page-content h2:first-child,
+.pricing-page-content h3:first-child {
+    margin-top: 0;
+}
+
+.pricing-page-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.pricing-page-content ul,
+.pricing-page-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+/* === Basis styling === */
+.pricing-container {
+    --primary-color: #4e54c8;
+    --border-color: #e4e4e7;
+    --background-color: #ffffff;
+    --foreground-color: #262626;
+    --muted-color: #737373;
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* === Header styling === */
+.pricing-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--foreground-color);
+}
+
+.pricing-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--muted-color);
+    white-space: pre-line;
+}
+
+/* === Plans grid === */
+.pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* === Plan card styling === */
+.pricing-plan {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-plan-popular {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03);
+    z-index: 10;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pricing-plan-popular:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.pricing-plan-popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0 0.75rem 0 0.75rem;
+}
+
+.pricing-plan-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-plan-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--muted-color);
+    margin-bottom: 1.5rem;
+}
+
+.pricing-plan-price-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.pricing-plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--foreground-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.currency {
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+}
+
+.pricing-plan-period {
+    font-size: 0.875rem;
+    color: var(--muted-color);
+}
+
+/* === Features list === */
+.pricing-plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+}
+
+.pricing-plan-feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.feature-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+/* === Plan footer === */
+.pricing-plan-footer {
+    margin-top: auto;
+}
+
+.pricing-plan-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.pricing-plan-button:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(78, 84, 200, 0.1);
+}
+
+.pricing-plan-button-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.pricing-plan-button-primary:hover {
+    opacity: 0.9;
+}
+
+.pricing-plan-description {
+    font-size: 0.85rem;
+    color: var(--muted-color);
+    text-align: center;
+    margin: 0;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 768px) {
+    .pricing-plans {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-plan-popular {
+        order: -1;
+        transform: scale(1);
+        grid-row: 1;
+    }
+    
+    .pricing-plan-popular:hover {
+        transform: translateY(-5px) scale(1);
+    }
+    
+    .pricing-title {
+        font-size: 2rem;
+    }
+    
+    .pricing-description {
+        font-size: 1rem;
+    }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-plan {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.pricing-plan:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.pricing-plan:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pricing-plan:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Price change animation */
+.price {
+    transition: all 0.3s ease;
+}
+
+.price {
+    display: inline-block;
+    min-width: 3rem;
+    text-align: right;
+} 

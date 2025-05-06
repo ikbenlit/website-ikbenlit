@@ -65,6 +65,9 @@ require_once get_template_directory() . '/includes/api/claude-config.php';
 // Include project meta fields
 require_once get_template_directory() . '/includes/project-meta.php';
 
+// Include pricing customizer settings
+require_once get_template_directory() . '/includes/customizer/pricing-customizer.php';
+
 // Voeg ajaxurl toe voor niet-admin pagina's
 function add_ajax_url() {
     echo '<script type="text/javascript">
@@ -151,3 +154,36 @@ function ikbenlit_handle_chatbot_message() {
 // Registreer de AJAX handlers voor ingelogde en niet-ingelogde gebruikers
 add_action('wp_ajax_chatbot_message', 'ikbenlit_handle_chatbot_message');
 add_action('wp_ajax_nopriv_chatbot_message', 'ikbenlit_handle_chatbot_message');
+
+/**
+ * Registreer stijlen en scripts voor de pricing pagina.
+ */
+function ikbenlit_register_pricing_assets() {
+    // Registreer de CSS
+    wp_register_style(
+        'ikbenlit-pricing-style',
+        get_template_directory_uri() . '/css/pricing.css',
+        array(),
+        filemtime(get_template_directory() . '/css/pricing.css')
+    );
+
+    // Registreer de JavaScript
+    wp_register_script(
+        'ikbenlit-pricing-script',
+        get_template_directory_uri() . '/js/pricing.js',
+        array('jquery'),
+        filemtime(get_template_directory() . '/js/pricing.js'),
+        true
+    );
+
+    // Laad de stijlen en scripts op pricing pagina's
+    if (is_page_template('page-pricing.php') || 
+        is_page_template('template-parts/page-pricing-services.php') || 
+        has_block('ikbenlit/pricing-table') || 
+        strpos(get_page_template_slug(), 'pricing') !== false ||
+        is_page() && get_post_field('post_name') === 'pricing-services') {
+        wp_enqueue_style('ikbenlit-pricing-style');
+        wp_enqueue_script('ikbenlit-pricing-script');
+    }
+}
+add_action('wp_enqueue_scripts', 'ikbenlit_register_pricing_assets');

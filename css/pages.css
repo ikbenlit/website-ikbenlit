@@ -636,4 +636,20 @@ body, html {
 .user-message {
     background: rgba(255, 255, 255, 0.1);
     color: var(--light-gray);
+}
+
+/* Pricing pagina's styling */
+.page-pricing-services,
+.page-template-page-pricing {
+    /* Zorg ervoor dat de content onder de header begint */
+    margin-top: 0;
+}
+
+.page-pricing-services .entry-header,
+.page-template-page-pricing .entry-header {
+    margin-top: 2rem;
+}
+
+.pricing-page-wrapper {
+    margin-top: 0;
 } 
