@@ -53,7 +53,7 @@ function ikbenlit_scripts() {
     
     // Enqueue chat script only if needed
     if (is_front_page()) {
-        wp_enqueue_script('floating-chat', get_template_directory_uri() . '/js/floating-chat.js', array(), '1.0.0', true);
+        wp_enqueue_script('floating-chat', get_template_directory_uri() . '/js/floating-chat.js', array('ikbenlit-script'), '1.0.0', true);
     }
 }
 add_action('wp_enqueue_scripts', 'ikbenlit_scripts');
@@ -125,3 +125,29 @@ function ikbenlit_rewrite_flush() {
     flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'ikbenlit_rewrite_flush');
+
+// ChatBot configuratie en AJAX handlers
+function ikbenlit_chatbot_scripts() {
+    wp_localize_script('ikbenlit-script', 'chatConfig', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'themeUrl' => get_template_directory_uri()
+    ));
+}
+add_action('wp_enqueue_scripts', 'ikbenlit_chatbot_scripts');
+
+// AJAX handler voor chatbot berichten
+function ikbenlit_handle_chatbot_message() {
+    $message = isset($_POST['message']) ? sanitize_text_field($_POST['message']) : '';
+    
+    // Eenvoudige response voor nu - later kun je dit uitbreiden met AI-integratie
+    $response = array(
+        'response' => "Bedankt voor je bericht: " . $message . ". Dit is een tijdelijke response omdat de AI-integratie momenteel niet is geconfigureerd."
+    );
+    
+    wp_send_json_success($response);
+    wp_die();
+}
+
+// Registreer de AJAX handlers voor ingelogde en niet-ingelogde gebruikers
+add_action('wp_ajax_chatbot_message', 'ikbenlit_handle_chatbot_message');
+add_action('wp_ajax_nopriv_chatbot_message', 'ikbenlit_handle_chatbot_message');

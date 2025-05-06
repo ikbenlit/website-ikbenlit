@@ -87,12 +87,22 @@ body .projects-section .project-card-link:hover .project-card {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 0.7rem;
+    font-size: 0;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 1;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Voeg ster-icoon toe */
+.projects-section .status-ribbon::before {
+    content: '\2605'; /* Unicode voor een gevulde ster */
+    font-size: 1rem; /* Grootte van de ster, pas aan indien nodig */
+    color: white;
+    line-height: 1; /* Zorgt voor betere verticale centrering */
+    position: relative; /* Zorgt dat het binnen de flexbox blijft */
+    top: 1px; /* Kleine aanpassing voor verticale centrering */
 }
 
 .projects-section .status-ribbon.status-completed {
@@ -284,15 +294,14 @@ body .projects-section .meta-tag {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    background-color: #f5f5f5;
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    background-color: #f5f5f5; /* Keep background for loading */
 }
 
 .single-project .project-featured-image img {
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the container */
+    width: 100%; /* Keep width 100% to fit container */
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto; /* Let height adjust based on aspect ratio */
 }
 
 /* Description styling for single project */
@@ -332,8 +341,8 @@ body .projects-section .meta-tag {
 /* Post Navigation styling */
 .single-project .post-navigation {
     margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #e5e5e5;
+    /* padding-top: 2rem; */ /* Verwijderd */
+    /* border-top: 1px solid #e5e5e5; */ /* Verwijderd */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -346,49 +355,79 @@ body .projects-section .meta-tag {
     max-width: calc(50% - 0.5rem);
 }
 
+/* Explicitly align text within each div */
+.single-project .nav-previous {
+     text-align: left;
+}
+
 .single-project .nav-next {
     text-align: right;
 }
 
 .single-project .post-navigation a {
-    display: inline-block; /* Allow better spacing control */
+    display: inline-flex; /* Use flex to align text and arrow */
+    align-items: center; /* Vertically center text and arrow */
     text-decoration: none;
+    color: var(--primary-red); /* Set link color */
+    /* padding: 0.5rem 0; */ /* Verwijderd, zet expliciet op 0 */
+    line-height: 1.3; /* Restore normal line height */
+    gap: 0.4em; /* Add gap between arrow and text */
+    /* Force no border, background or shadow */
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important; /* Force no padding */
 }
+
+/* Override algemene hover en houd kleur hetzelfde */
+.single-project .post-navigation a:hover {
+    color: var(--primary-red); /* Behoud de normale kleur */
+} 
+
+/* Verwijder hover effect - Zeker weten weg */
+/* 
+.single-project .post-navigation a:hover {
+    color: var(--dark-blue); 
+} 
+*/
 
 .single-project .nav-subtitle {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--primary-red); /* Red subtitle */
+    /* Restore visibility and original styling */
+    /* border: 0; */
+    /* clip: rect(0 0 0 0); */
+    /* height: 1px; */
+    /* margin: -1px; */
+    /* overflow: hidden; */
+    /* padding: 0; */
+    /* position: absolute; */
+    /* width: 1px; */
+    /* white-space: nowrap; */ 
+    display: inline; /* Display text inline */
+    font-size: 0.8rem; /* Match meta-tag size */
+    color: inherit; /* Inherit color from parent <a> */
     text-transform: uppercase;
-    margin-bottom: 0.25rem;
     font-weight: 500;
 }
 
-.single-project .nav-title {
-    color: var(--dark-blue); /* Dark blue title */
-    font-weight: 500;
-    line-height: 1.3;
-    transition: color 0.3s ease;
-}
-
-.single-project .post-navigation a:hover .nav-title {
-    color: var(--primary-red);
-}
+/* Remove styles for nav-title as it's removed from HTML */
+/* .single-project .nav-title { ... } */
+/* .single-project .post-navigation a:hover .nav-title { ... } */
 
 /* Add arrow to previous link */
 .single-project .nav-previous a::before {
-    content: '← '; /* Add left arrow */
+    content: '←'; /* Keep left arrow */
     font-family: Arial, sans-serif;
-    margin-right: 0.3em;
-    color: var(--primary-red);
+    font-size: 1.1em; /* Adjust arrow size relative to text */
+    /* No margin needed due to gap property on <a> */
 }
 
 /* Add arrow to next link */
 .single-project .nav-next a::after {
-    content: ' →'; /* Add right arrow */
+    content: '→'; /* Keep right arrow */
     font-family: Arial, sans-serif;
-    margin-left: 0.3em;
-    color: var(--primary-red);
+    font-size: 1.1em; /* Adjust arrow size relative to text */
+    /* No margin needed due to gap property on <a> */
+    order: 1; /* Ensure arrow comes after text in flex layout */
 }
 
 /* Responsive adjustments if needed */
@@ -418,16 +457,17 @@ body .projects-section .meta-tag {
         text-align: left; /* Align next link left */
     }
      .single-project .nav-next a::after {
-        margin-left: 0; /* Reset margin for arrow */
-     }
-     .single-project .nav-next a::before {
-         content: '→ '; /* Add right arrow before */
-         font-family: Arial, sans-serif;
-         margin-right: 0.3em;
-         color: var(--primary-red);
-     }
+        content: '→';
+        order: 1; /* Keep order for small screens */
+    }
+    .single-project .nav-next a::before {
+        content: none; 
+    }
 
-
+    /* Ensure subtitle is visible on small screens too */
+    .single-project .nav-subtitle {
+        display: inline;
+    }
 }
 
 /* External Link Icons - Add these styles */
@@ -521,4 +561,33 @@ body .projects-section .meta-tag {
     /* .single-project .project-featured-image {
         height: 250px;
     } */
+}
+
+/* Back to Projects Link */
+.single-project .back-to-projects {
+    margin-bottom: 1.5rem; /* Voeg ruimte toe onder de link */
+}
+
+.single-project .back-to-projects-link {
+    display: inline-flex; /* Gebruik flexbox voor uitlijning */
+    align-items: center; /* Centreer pijl en tekst verticaal */
+    text-decoration: none;
+    color: var(--primary-red);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    gap: 0.4em; /* Ruimte tussen pijl en tekst */
+}
+
+.single-project .back-to-projects-link .arrow {
+    font-size: 1.2em; /* Maak de pijl iets groter */
+    line-height: 1; /* Zorg voor goede uitlijning */
+}
+
+.single-project .back-to-projects-link:hover {
+    color: var(--dark-blue); /* Verander kleur bij hover */
+}
+
+@media (max-width: 768px) {
+    /* ... existing code ... */
 }

@@ -518,20 +518,21 @@ body, html {
 }
 
 /* Navigation tussen posts */
-.post-navigation {
+/* Maak selectors specifiek voor single-post */
+.single-post .post-navigation {
     margin: 3rem 0;
     display: flex;
     justify-content: space-between;
     gap: 2rem;
 }
 
-.nav-previous,
-.nav-next {
+.single-post .nav-previous,
+.single-post .nav-next {
     flex: 1;
 }
 
-.nav-previous a,
-.nav-next a {
+.single-post .nav-previous a,
+.single-post .nav-next a {
     display: block;
     padding: 1rem;
     background: var(--white);
@@ -542,8 +543,8 @@ body, html {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.nav-previous a:hover,
-.nav-next a:hover {
+.single-post .nav-previous a:hover,
+.single-post .nav-next a:hover {
     background: var(--brand-gradient);
     color: var(--white);
     transform: translateY(-2px);

@@ -2,6 +2,11 @@
 
 <main class="site-main single-project">
     <div class="container">
+        <div class="back-to-projects">
+            <a href="<?php echo esc_url(home_url('/projecten/')); ?>" class="back-to-projects-link">
+                <span class="arrow">&larr;</span> <?php _e('Terug naar Projecten', 'ikbenlit'); ?>
+            </a>
+        </div>
         <?php while (have_posts()) : the_post(); 
             $programming_language = get_post_meta(get_the_ID(), '_project_programming_language', true);
             $technology = get_post_meta(get_the_ID(), '_project_technology', true);
@@ -62,7 +67,6 @@
                     <div class="nav-previous">
                         <a href="<?php echo get_permalink($prev_post->ID); ?>">
                             <span class="nav-subtitle"><?php _e('Vorige Project', 'ikbenlit'); ?></span>
-                            <span class="nav-title"><?php echo esc_html($prev_post->post_title); ?></span>
                         </a>
                     </div>
                 <?php endif; ?>
@@ -71,7 +75,6 @@
                     <div class="nav-next">
                         <a href="<?php echo get_permalink($next_post->ID); ?>">
                             <span class="nav-subtitle"><?php _e('Volgende Project', 'ikbenlit'); ?></span>
-                            <span class="nav-title"><?php echo esc_html($next_post->post_title); ?></span>
                         </a>
                     </div>
                 <?php endif; ?>
